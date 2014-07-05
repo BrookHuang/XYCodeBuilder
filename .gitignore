@@ -1,0 +1,12 @@
+#ignore visual studio debug folder
+obj/
+[Bb]in/
+*/aspnet_client
+/Web/*.mswwsettings
+*.csproj.user
+
+#ignore dll file
+*.dll
+*.exe
+
+
