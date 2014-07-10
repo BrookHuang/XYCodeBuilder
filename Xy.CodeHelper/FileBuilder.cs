@@ -37,6 +37,7 @@ namespace Xy.CodeHelper {
             _sbBase.AppendLine("        }");
             _sbBase.AppendLine();
             _sbBase.AppendLine(_buildFunction("Fill", "public", "void", "System.Data.DataRow inTempRow", false, FunctionBuilder.buildFunction_Fill));
+            _sbBase.AppendLine(_buildFunction("FillRow", "public", "void", "System.Data.DataRow inTempRow", false, FunctionBuilder.buildFunction_FillRow));
             _sbBase.AppendLine(_buildFunction("FillProcedure", "public", "Xy.Data.Procedure", "Xy.Data.Procedure inItem", false, FunctionBuilder.buildFunction_FillProcedure));
             //_sbBase.AppendLine(_buildFunction("toStringCollection", "public", "System.Collections.Specialized.NameValueCollection", string.Empty, false, FunctionBuilder.buildFunction_toStringCollection));
             _sbBase.AppendLine(_buildFunction("GetAttributesName", "public", "string[]", string.Empty, false, FunctionBuilder.buildFunction_GetAttributesName));

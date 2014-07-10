@@ -45,6 +45,16 @@ namespace Xy.CodeHelper {
             return _code.ToString();
         }
 
+        public static string buildFunction_FillRow(FileBuilder fileBuilder, string name, string access, string returnType, string parameter, bool isStatic, params object[] param) {
+            StringBuilder _code = new StringBuilder();
+            _code.AppendLine(T(2) + access + " " + (isStatic ? "static " : string.Empty) + returnType + " " + name + "(" + parameter + ") {");
+            foreach (CodeEntity.Field _field in fileBuilder.Table.FieldList) {
+                _code.AppendLine(string.Format(T(3) + @"inTempRow[""{0}""] = this.{0};", _field.Name));
+            }
+            _code.AppendLine(T(2) + "}");
+            return _code.ToString();
+        }
+
         public static string buildFunction_FillProcedure(FileBuilder fileBuilder, string name, string access, string returnType, string parameter, bool isStatic, params object[] param) {
             StringBuilder _code = new StringBuilder();
             _code.AppendLine(T(2) + access + " " + (isStatic ? "static " : string.Empty) + returnType + " " + name + "(" + parameter + ") {");
