@@ -43,6 +43,7 @@ namespace Xy.CodeHelper {
             _sbBase.AppendLine(_buildFunction("GetAttributesName", "public", "string[]", string.Empty, false, FunctionBuilder.buildFunction_GetAttributesName));
             _sbBase.AppendLine(_buildFunction("GetAttributesValue", "public", "object", "string inName", false, FunctionBuilder.buildFunction_GetAttributesValue));
             _sbBase.AppendLine(_buildFunction("GetXml", "public", "System.Xml.XPath.XPathDocument", string.Empty, false, FunctionBuilder.buildFunction_GetXml));
+            _sbBase.AppendLine(_buildFunction("CreateEmptyTable", "public", "System.Data.DataTable", string.Empty, true, FunctionBuilder.buildFunction_CreateEmptyTable));
             _sbBase.AppendLine("    }");
             _sbBase.AppendLine("}");
             _sbBase.AppendLine();

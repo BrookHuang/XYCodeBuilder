@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <config>
   <connectionStrings>
-    <Item name="amwihiud@.\sqlexpress use XiaoYangDB" connectionString="Data Source=.\sqlexpress;Database=XiaoYangDB;User ID=amwihiud;Password=amwihiud" baseNamespace="XiaoYang" lastUseTime="2014/7/9 17:31:49" />
+    <Item name="amwihiud@.\sqlexpress use XiaoYangDB" connectionString="Data Source=.\sqlexpress;Database=XiaoYangDB;User ID=amwihiud;Password=amwihiud" baseNamespace="XiaoYang" lastUseTime="2014/7/31 15:39:41" />
     <Item name="amwihiud@.\sqlexpress use XiaoYangDB_ClickJia" connectionString="Data Source=.\sqlexpress;Database=XiaoYangDB_ClickJia;User ID=amwihiud;Password=amwihiud" baseNamespace="ClickJia" lastUseTime="2014/5/22 15:47:58" />
     <Item name="amwihiud@.\sqlexpress use XyAutoAccess" connectionString="Data Source=.\sqlexpress;Database=XyAutoAccess;User ID=amwihiud;Password=amwihiud" baseNamespace="XiaoYang" lastUseTime="2014/3/20 17:07:23" />
     <Item name="amwihiud@.\sqlexpress use XiaoYangDB_Hnht918" connectionString="Data Source=.\sqlexpress;Database=XiaoYangDB_Hnht918;User ID=amwihiud;Password=amwihiud" baseNamespace="XiaoYang" lastUseTime="2014/6/26 20:46:05" />

@@ -31,6 +31,10 @@ namespace Xy.CodeEntity {
             return CodeHelper.CodeTransform.TypeConvert(originalType, CSharpType, template);
         }
 
+        public string GetCsharpClass() {
+            return CodeHelper.CodeTransform.toCsharpClass(_type);
+        }
+
         public string GetDBType() {
             return CodeHelper.CodeTransform.toDbType(_type);
         }

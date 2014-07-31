@@ -32,6 +32,34 @@ namespace Xy.CodeHelper {
             return "un_toCsharp_" + originalType;
         }
 
+        public static string toCsharpClass(string originalType) {
+            switch (originalType) {
+                case "tinyint":
+                    return "Byte";
+                case "smallint":
+                    return "Int16";
+                case "int":
+                    return "Int32";
+                case "bigint":
+                    return "Int64";
+                case "varchar":
+                case "nvarchar":
+                case "text":
+                case "ntext":
+                    return "String";
+                case "bit":
+                    return "Boolean";
+                case "date":
+                case "datetime":
+                    return "DateTime";
+                case "decimal":
+                    return "Decimal";
+                case "float":
+                    return "Single";
+            }
+            return "un_toCsharpClass_" + originalType;
+        }
+
         /// <summary>
         /// convert a CSharp type to another CSharp type
         /// </summary>

@@ -66,6 +66,18 @@ namespace Xy.CodeHelper {
             return _code.ToString();
         }
 
+        public static string buildFunction_CreateEmptyTable(FileBuilder fileBuilder, string name, string access, string returnType, string parameter, bool isStatic, params object[] param) {
+            StringBuilder _code = new StringBuilder();
+            _code.AppendLine(T(2) + access + " " + (isStatic ? "static " : string.Empty) + returnType + " " + name + "(" + parameter + ") {");
+            _code.AppendLine(T(3) + "System.Data.DataTable _table = new System.Data.DataTable();");
+            foreach (CodeEntity.Field _field in fileBuilder.Table.FieldList) {
+                _code.AppendLine(string.Format(T(3) + @"_table.Columns.Add(""{0}"", typeof({1}));", _field.Name, _field.GetCsharpClass()));
+            }
+            _code.AppendLine(T(3) + "return _table;");
+            _code.AppendLine(T(2) + "}");
+            return _code.ToString();
+        }
+
         //public static string buildFunction_toStringCollection(FileBuilder fileBuilder, string name, string access, string returnType, string parameter, bool isStatic, params object[] param) {
         //    StringBuilder _code = new StringBuilder();
         //    _code.AppendLine(T(2) + access + " " + (isStatic ? "static " : string.Empty) + returnType + " " + name + "(" + parameter + ") {");
