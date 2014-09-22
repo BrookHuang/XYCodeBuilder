@@ -145,7 +145,7 @@ BEGIN
 	RETURN(@TotalCount)
 END
 ", tableName, _pkField.Name));
-            _cmd.AppendLine("END'");
+            _cmd.AppendLine("'");
             _cmd.AppendLine("End");
             #endregion
 

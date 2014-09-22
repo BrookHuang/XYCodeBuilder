@@ -115,6 +115,7 @@ namespace Xy.CodeBuilder {
             foreach (int _selectIndex in listBox1.SelectedIndices) {
                 _pb.CreateProcedure(listBox1.Items[_selectIndex].ToString(), _con);
             }
+            Xy.CodeHelper.DataGet.Refresh();
             MessageBox.Show("Create success!");
         }
     }

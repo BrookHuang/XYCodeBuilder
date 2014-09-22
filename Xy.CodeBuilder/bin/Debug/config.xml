@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <config>
   <connectionStrings>
-    <Item name="amwihiud@. use XiaoYangDB" connectionString="Data Source=.;Database=XiaoYangDB;User ID=amwihiud;Password=amwihiud" baseNamespace="XiaoYang" lastUseTime="2014/9/22 16:25:23" />
+    <Item name="amwihiud@. use XiaoYangDB" connectionString="Data Source=.;Database=XiaoYangDB;User ID=amwihiud;Password=amwihiud" baseNamespace="XiaoYang" lastUseTime="2014/9/22 17:17:27" />
   </connectionStrings>
 </config>
