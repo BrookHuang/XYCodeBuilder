@@ -109,5 +109,13 @@ namespace Xy.CodeBuilder {
             Xy.CodeHelper.DataGet.Refresh();
             Init();
         }
+
+        private void button4_Click(object sender, EventArgs e) {
+            Xy.CodeHelper.ProcedureBuilder _pb = new CodeHelper.ProcedureBuilder(textBox1.Text);
+            foreach (int _selectIndex in listBox1.SelectedIndices) {
+                _pb.CreateProcedure(listBox1.Items[_selectIndex].ToString(), _con);
+            }
+            MessageBox.Show("Create success!");
+        }
     }
 }
