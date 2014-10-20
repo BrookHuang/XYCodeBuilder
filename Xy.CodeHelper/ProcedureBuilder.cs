@@ -37,7 +37,7 @@ namespace Xy.CodeHelper {
             for (int i = 0; i < _fields.Length; i++) {
                 Xy.CodeEntity.Field _item = _fields[i];
                 if (!_item.IsPK) {
-                    _cmd.AppendLine("\t@" + _item.Name + " " + _item.Type + (i < _fields.Length - 1 ? "," : string.Empty));
+                    _cmd.AppendLine("\t@" + _item.Name + " " + _item.GetSQLDecalre() + (i < _fields.Length - 1 ? "," : string.Empty));
                 }
             }
             _cmd.AppendLine(") as");
@@ -71,7 +71,7 @@ namespace Xy.CodeHelper {
             _cmd.AppendLine("EXEC dbo.sp_executesql @statement = N'CREATE proc [" + _name_edit + "](");
             for (int i = 0; i < _fields.Length; i++) {
                 Xy.CodeEntity.Field _item = _fields[i];
-                _cmd.AppendLine("\t@" + _item.Name + " " + _item.Type + (i < _fields.Length - 1 ? "," : string.Empty));
+                _cmd.AppendLine("\t@" + _item.Name + " " + _item.GetSQLDecalre() + (i < _fields.Length - 1 ? "," : string.Empty));
             }
             _cmd.AppendLine(") as");
             _cmd.AppendLine("BEGIN");
@@ -98,7 +98,7 @@ namespace Xy.CodeHelper {
             _cmd.AppendLine("IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[" + _name_del + "]') AND type in (N'P', N'PC'))");
             _cmd.AppendLine("BEGIN");
             _cmd.AppendLine("EXEC dbo.sp_executesql @statement = N'CREATE proc [" + _name_del + "](");
-            _cmd.AppendLine("\t@" + _pkField.Name + " " + _pkField.Type);
+            _cmd.AppendLine("\t@" + _pkField.Name + " " + _pkField.GetSQLDecalre());
             _cmd.AppendLine(") as");
             _cmd.AppendLine("BEGIN");
             _cmd.AppendLine("Delete from [" + tableName + "] where [" + _pkField.Name + "] = @" + _pkField.Name);
@@ -111,7 +111,7 @@ namespace Xy.CodeHelper {
             _cmd.AppendLine("IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[" + _name_get + "]') AND type in (N'P', N'PC'))");
             _cmd.AppendLine("BEGIN");
             _cmd.AppendLine("EXEC dbo.sp_executesql @statement = N'CREATE proc [" + _name_get + "](");
-            _cmd.AppendLine("\t@" + _pkField.Name + " " + _pkField.Type);
+            _cmd.AppendLine("\t@" + _pkField.Name + " " + _pkField.GetSQLDecalre());
             _cmd.AppendLine(") as");
             _cmd.AppendLine("BEGIN");
             _cmd.AppendLine("Select * from [" + tableName + "] where [" + _pkField.Name + "] = @" + _pkField.Name);

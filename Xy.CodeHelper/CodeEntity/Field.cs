@@ -12,9 +12,16 @@ namespace Xy.CodeEntity {
         public string CSharpType { get { return _cSharpType; } }
         private bool _isPK;
         public bool IsPK { get { return _isPK; } }
+
+        private string _length;
+        private string _precision;
+        private string _scale;
         public Field(System.Data.DataRow row, bool isPK) {
             _name = row["Name"].ToString();
             _type = row["Type"].ToString();
+            _length = row["Length"].ToString();
+            _precision = row["Precision"].ToString();
+            _scale = row["Scale"].ToString();
             _cSharpType = CodeHelper.CodeTransform.toCsharp(_type);
             _isPK = isPK;
         }
@@ -37,6 +44,10 @@ namespace Xy.CodeEntity {
 
         public string GetDBType() {
             return CodeHelper.CodeTransform.toDbType(_type);
+        }
+
+        public string GetSQLDecalre() {
+            return Xy.CodeHelper.CodeTransform.toSqlDeclare(_type, _length, _precision, _scale);
         }
     }
 }
