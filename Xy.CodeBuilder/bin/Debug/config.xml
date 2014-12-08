@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<config>
-  <connectionStrings>
-    <Item name="amwihiud@. use XiaoYangDB" connectionString="Data Source=.;Database=XiaoYangDB;User ID=amwihiud;Password=amwihiud" baseNamespace="XiaoYang" lastUseTime="2014/10/17 15:46:25" />
-  </connectionStrings>
-</config>

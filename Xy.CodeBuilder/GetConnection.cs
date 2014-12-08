@@ -12,6 +12,14 @@ namespace Xy.CodeBuilder {
         private System.Xml.XmlDocument _cfg;
         public GetConnection() {
             InitializeComponent();
+            string _configPath = Application.StartupPath + "\\config.xml";
+            if (!System.IO.File.Exists(_configPath)) {
+                System.IO.FileStream _fs = System.IO.File.Create(_configPath);
+                byte[] _buffer = System.Text.Encoding.UTF8.GetBytes("<config><connectionStrings></connectionStrings></config>");
+                _fs.Write(_buffer, 0, _buffer.Length);
+                _fs.Flush();
+                _fs.Close();
+            }
             _cfg = new System.Xml.XmlDocument();
             _cfg.Load(Application.StartupPath + "\\config.xml");
             DateTime mostRecentlyTime = DateTime.MinValue;
